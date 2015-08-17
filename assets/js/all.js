@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-    // var base_url = $('#base_url').val();
+    var base_url = $('#base_url').val();
 
     $("#old_domain_btn").on("click", function ()
     {

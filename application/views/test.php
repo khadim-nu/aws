@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?= base_url(); ?>assets/js/all.js"></script>
     </head>
     <body>
+        <input type="hidden" name="base_url" id="base_url" value="<?= base_url(); ?>" />
         <div class="wrapper">
             <div class="header">
                 <h1 class="title">Amazon Web Services</h1>
