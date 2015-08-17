@@ -27,9 +27,15 @@ class Welcome extends CI_Controller {
 
     public function index() {
         $this->load->view('test');
+        
     }
 
     public function already_registered_domain() {
+        $result=  include base_url().'test.php';
+        print_r($result);
+        
+        
+        
 
 //        $ch = curl_init("https://route53.amazonaws.com/date");
 //        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -45,22 +51,22 @@ class Welcome extends CI_Controller {
        <CallerReference>whitelabel DNS</CallerReference>
     </CreateReusableDelegationSetRequest>';
 
-        $ch = curl_init();
-        // Set query data here with the URL
-        curl_setopt($ch, CURLOPT_URL, $baseurl);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: route53.amazonaws.com', 'X-Amzn-Authorization: AKIAJCE4ZDY4NPCMCZMA'));
-        curl_setopt($ch, CURLOPT_TIMEOUT, '3');
-        $rest = curl_exec($ch);
-
-        if ($rest === false) {
+//        $ch = curl_init();
+//        // Set query data here with the URL
+//        curl_setopt($ch, CURLOPT_URL, $baseurl);
+//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+//        curl_setopt($ch, CURLOPT_POST, 1);
+//        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
+//        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: route53.amazonaws.com', 'X-Amzn-Authorization: AKIAJCE4ZDY4NPCMCZMA'));
+//        curl_setopt($ch, CURLOPT_TIMEOUT, '3');
+//        $rest = curl_exec($ch);
+//
+//        if ($rest === false) {
 // throw new Exception('Curl error: ' . curl_error($crl));
-            print_r('Curl error: ' . curl_error($ch));
-        }
-        curl_close($ch);
-        print_r($rest);
+//            print_r('Curl error: ' . curl_error($ch));
+//        }
+//        curl_close($ch);
+//        print_r($rest);
         
         
         
