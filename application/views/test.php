@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <link href="<?= base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
         <link href="<?= base_url(); ?>assets/css/all.css" rel="stylesheet">
-        
+
         <script type="text/javascript" src="<?= base_url(); ?>assets/js/jquery.min.js"></script>
         <script type="text/javascript" src="<?= base_url(); ?>assets/js/all.js"></script>
     </head>
@@ -23,44 +23,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="container ">
                 <div class="left-block col-md-10">
-
-                    <form method="post" action="<?= base_url(); ?>index.php/welcome/already_registered_domain" class="form" role="form">
-                        <div class="row">
-                            <div class=" col-md-12 form-group">
-                                <h3>Already have a Domain Name?</h3>
-                            </div>
+                    <div class="row">
+                        <div class=" col-md-12 form-group">
+                            <h3>Already have a Domain Name?</h3>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <input class="form-control" id="old_domain" name="old_domain" placeholder="example.com"  type="text" required autofocus />
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input class="form-control" id="old_domain" name="old_domain" placeholder="example.com"  type="text" required autofocus />
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <input type="button" id="old_domain_btn" class="btn btn-primary pull-right" value="Get NS" />
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input type="button" id="old_domain_btn" class="btn btn-primary pull-right" value="Get NS" />
                         </div>
-                    </form>
-
-
-                    <form method="post" action="<?= base_url(); ?>welcome/register_new_domain" class="form" role="form">
-
-                        <div class="row">
-                            <div class=" col-md-12 form-group">
-                                <h3>Register new Domain and get served</h3>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12 form-group">
+                            <h3>Register new Domain and get served</h3>
                         </div>
-                        <div class="row">
-                            <div class=" col-md-12 form-group">
-                                <input class="form-control" id="old_domain" name="new_domain" placeholder="example.com"  type="text" required autofocus />
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class=" col-md-12 form-group">
+                            <input class="form-control" id="old_domain" name="new_domain" placeholder="example.com"  type="text" required autofocus />
                         </div>
-                        <div class="row">
-                            <div class="col-md-12 form-group">
-                                <input type="submit" class="btn btn-primary pull-right" value="Register" />
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <input type="button" class="btn btn-primary pull-right" value="Register" />
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="right-block col-md-4">
                     <div class="row">

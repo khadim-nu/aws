@@ -7,12 +7,11 @@ $(document).ready(function () {
         var domain = $("#old_domain").val();
         domain = domain.trim();
         if (domain != "") {
-            $.ajax(
-                    {
+            $.ajax({
                         url: base_url+"test.php",
                         type: "POST",
                         data: {domain: domain},
-                        success: function (data, textStatus, jqXHR)
+                        success: function (data)
                         {
                             var result = JSON.parse(data);
                             console.log(result);
@@ -37,11 +36,12 @@ $(document).ready(function () {
                                 }
                             }
                         },
-                        error: function (jqXHR, textStatus, errorThrown)
+                        error: function ()
                         {
                             console.log("error");
                         }
                     });
+                    return false;
         }
         else {
             alert("Please enter the domain name!");
