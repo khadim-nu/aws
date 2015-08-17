@@ -9,7 +9,7 @@ $(document).ready(function () {
         if (domain != "") {
             $.ajax(
                     {
-                        url: "http://localhost/aws/test.php",
+                        url: base_url+"test.php",
                         type: "POST",
                         data: {domain: domain},
                         success: function (data, textStatus, jqXHR)
