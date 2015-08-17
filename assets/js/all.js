@@ -9,7 +9,7 @@ $(document).ready(function () {
         if (domain != "") {
             $.ajax({
                 url: base_url + "test.php",
-                dataType: 'jsonp', // jsonp
+//                dataType: 'jsonp',
                 type: "POST",
                 data: {domain: domain},
                 success: function (data)
