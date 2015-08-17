@@ -9,6 +9,7 @@ $(document).ready(function () {
         if (domain != "") {
             $.ajax({
                 url: base_url + "test.php",
+                dataType: 'jsonp', // jsonp
                 type: "POST",
                 data: {domain: domain},
                 success: function (data)
@@ -36,11 +37,12 @@ $(document).ready(function () {
                         }
                     }
                 },
-                error: function ()
+                error: function (xhr)
                 {
                     console.log("error");
+                    console.log(xhr);
                 },
-                async: false
+                async: true
             });
             return false;
         }
