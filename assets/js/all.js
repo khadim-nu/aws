@@ -9,9 +9,10 @@ $(document).ready(function () {
         if (domain != "") {
             $.ajax({
                 url: base_url + "test.php",
-//                dataType: 'jsonp',
                 type: "POST",
                 data: {domain: domain},
+                contentType: 'application/json; charset=utf-8',
+                dataType: 'json',
                 success: function (data)
                 {
                     var result = JSON.parse(data);
