@@ -28,13 +28,12 @@ function get_served(){
 		}
 
 	}
-
 	if(!empty($ns_arr)){
 		echo json_encode(array("data"=>$ns_arr,"msg"=>"successfull!","status"=>true));
 	}
 	
 	else{
-		echo json_encode(array("data"=>array($_POST['domain']),"msg"=>"No data found!","status"=>true));
+		echo json_encode(array("data"=>array($_POST['domain']),"msg"=>"No data found!","status"=>false));
 	}
 
 

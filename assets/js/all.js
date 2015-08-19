@@ -11,21 +11,17 @@ $(document).ready(function () {
                 url: base_url + "test.php",
                 type: "POST",
                 data: {domain: domain},
-                contentType: 'application/json; charset=utf-8',
-                dataType: 'json',
                 success: function (data)
                 {
-                    var result = JSON.parse(data);
-                    console.log(result);
-                    var response = result['data'];
+                    var response = JSON.parse(data);
+                    console.log(response);
                     if (response) {
+                        if (response['status'] == true) {
+                            var html = "<div>";
+                            html += "Id: " + response['data']['Id'];
+                            html += "</div>";
 
-                        var html = "<div>";
-                        html += "Id: " + response['Id'];
-                        html += "</div>";
-
-                        var ns = response['ns'];
-                        if (ns) {
+                            var ns = response['data']['ns'];
                             for (var i = 0; i < ns.length; i++) {
                                 html += "<div>";
                                 html += "NS:" + (i + 1) + " " + ns[i];
@@ -34,8 +30,11 @@ $(document).ready(function () {
                             $('#result').html(html);
                         }
                         else {
-                            $('#result').html(" No result found");
+                            $('#result').html(response['msg']);
                         }
+                    }
+                    else {
+                        $('#result').html("Something went wrong. :(");
                     }
                 },
                 error: function (xhr)
