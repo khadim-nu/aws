@@ -18,8 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <input type="hidden" name="base_url" id="base_url" value="<?= base_url(); ?>" />
         <div class="wrapper">
             <div class="header">
-                <h1 class="title">Amazon Web Services</h1>
-                <h4 class="title">Amazon Route 53</h4>
+                <div class="col-md-8 pull-left top-header">
+                    <h1 class="title">Amazon Web Services</h1>
+                    <h4 class="title">Amazon Route 53</h4>
+                </div>
+                <div class="col-md-2">
+                </div>
             </div>
             <div class="container ">
                 <div class="login-block col-md-10">
