@@ -18,8 +18,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <input type="hidden" name="base_url" id="base_url" value="<?= base_url(); ?>" />
         <div class="wrapper">
             <div class="header">
-                <h1 class="title">Amazon Web Services</h1>
-                <h4 class="title">Amazon Route 53</h4>
+                <div class="col-md-8 pull-left top-header">
+                    <h1 class="title">Amazon Web Services</h1>
+                    <h4 class="title">Amazon Route 53</h4>
+                </div>
+                <div class="col-md-2">
+                    <p>Logged in as <strong><?= "Dropigee" ?></strong></p>
+                    <p class="text-center"><a href="<?= base_url();?>index.php/welcome/logout"><strong>Logout</strong></a></p>
+                </div>
             </div>
             <div class="container ">
                 <div class="left-block col-md-10">

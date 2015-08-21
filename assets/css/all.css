@@ -28,7 +28,10 @@ body{
     color: rgba(250, 250, 250, 0.8);
     // height: 100px !important;
     width: 104%;
-    padding: 3%;
+    padding: 2%  0 8% 0;
+}
+.top-header{
+    margin-left: 15%;
 }
 .footer{
     height: 70px !important;
@@ -44,7 +47,7 @@ body{
 }
 .title{
     text-align: center;
-    margin: 0% 30%;
+    margin: 0% 25%;
     color: whitesmoke;
 }
 .sub-title{
@@ -81,6 +84,12 @@ body{
     width: 50%;
     margin-top: 7%;
     border-right: 4px solid #999;
+    padding-bottom: 4%;
+}
+.login-block{
+    width: 80%;
+    margin: 7% 20% 0 20%; 
+    //border-right: 4px solid #999;*/
     padding-bottom: 4%;
 }
 .right-block{

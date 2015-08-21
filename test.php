@@ -58,4 +58,26 @@ function get_served(){
 // print_r($r53->getChange('/change/ZTGQ8LFNF8MB3'));
 
 }
+public function register(){
+	$AWS_ACCESS_KEY_ID = "[myaccesskeyhere]";
+	$AWS_SECRET_ACCESS_KEY = "[mysecretkeyhere]";
+
+	$body="POST / HTTP/1.1  
+	host:route53domains.us-east-1.amazonaws.com  
+	x-amz-date:20140711T205225Z
+	authorization:AWS4-HMAC-SHA256
+	Credential=AKIAIOSFODNN7EXAMPLE/20140711/us-east-1/route53domains/aws4_request,
+	SignedHeaders=content-length;content-type;host;user-agent;x-amz-date;x-amz-target,
+	Signature=calculated-signature
+	x-amz-target:Route53Domains_v20140515.CheckDomainAvailability 
+	user-agent:aws-sdk-java/1.8.3 Linux/2.6.18-164.el5PAE Java_HotSpot (TM )_Server_VM/24.60-b09/1.7.0_60 
+	content-type:application/x-amz-json- 1.1
+	content-length:number of characters in the JSON string
+	connections:Keep-Alive
+	{
+		"DomainName":"example.com"
+	}
+	";
+
+}
 get_served();

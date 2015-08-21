@@ -23,19 +23,52 @@ class Welcome extends CI_Controller {
         parent::__construct();
         $this->load->helper('url', 'text', 'form');
         $this->load->model("Welcome_model");
+        $this->load->library('session');
     }
 
     public function index() {
-        $this->load->view('test');
+        if (!$this->session->userdata('logged_in')) {
+            redirect("welcome/login");
+        } else {
+            redirect("welcome/home");
+        }
+    }
+
+    public function login() {
+        if (!$this->session->userdata('logged_in')) {
+            $this->load->view('login');
+        } else {
+            redirect("welcome/home");
+        }
+    }
+
+    public function home() {
+        if ($this->session->userdata('logged_in')) {
+            $this->load->view('home');
+        } else {
+            redirect("welcome/login");
+        }
+    }
+
+    public function authenticate() {
+        if ($this->Welcome_model->authenticate_user()) {
+            redirect("welcome/home");
+        } else {
+            redirect("welcome/login");
+        }
+    }
+    public function logout() {
+            $this->session->sess_destroy();
+            redirect("welcome");
         
     }
 
     public function already_registered_domain() {
-        $result=  include base_url().'test.php';
+        $result = include base_url() . 'test.php';
         print_r($result);
-        
-        
-        
+
+
+
 
 //        $ch = curl_init("https://route53.amazonaws.com/date");
 //        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -67,10 +100,6 @@ class Welcome extends CI_Controller {
 //        }
 //        curl_close($ch);
 //        print_r($rest);
-        
-        
-        
-        
 //        $domain=$this->input->post('old_domain');
 //       // include APPPATH.'libraries/r53.php';
 //        $this->load->library('custom_lib');
