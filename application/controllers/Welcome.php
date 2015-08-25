@@ -66,50 +66,6 @@ class Welcome extends CI_Controller {
     public function already_registered_domain() {
         $result = include base_url() . 'test.php';
         print_r($result);
-
-
-
-
-//        $ch = curl_init("https://route53.amazonaws.com/date");
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//        curl_setopt($ch, CURLOPT_HEADER, 1);
-//        $aws = curl_exec($ch);
-//        echo $aws;
-
-
-
-        $baseurl = "https://route53.amazonaws.com/2013-04-01/delegationset";
-        $body = '<?xml version="1.0" encoding="UTF-8"?>
-    <CreateReusableDelegationSetRequest xmlns="https://route53.amazonaws.com/doc/2013-04-01/">
-       <CallerReference>whitelabel DNS</CallerReference>
-    </CreateReusableDelegationSetRequest>';
-
-//        $ch = curl_init();
-//        // Set query data here with the URL
-//        curl_setopt($ch, CURLOPT_URL, $baseurl);
-//        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-//        curl_setopt($ch, CURLOPT_POST, 1);
-//        curl_setopt($ch, CURLOPT_POSTFIELDS, $body);
-//        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Host: route53.amazonaws.com', 'X-Amzn-Authorization: AKIAJCE4ZDY4NPCMCZMA'));
-//        curl_setopt($ch, CURLOPT_TIMEOUT, '3');
-//        $rest = curl_exec($ch);
-//
-//        if ($rest === false) {
-// throw new Exception('Curl error: ' . curl_error($crl));
-//            print_r('Curl error: ' . curl_error($ch));
-//        }
-//        curl_close($ch);
-//        print_r($rest);
-//        $domain=$this->input->post('old_domain');
-//       // include APPPATH.'libraries/r53.php';
-//        $this->load->library('custom_lib');
-//        $access_key='AKIAJCE4ZDY4NPCMCZMA';
-//        $secret_key='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';
-//        
-//       $r53 = new Route53($access_key, $secret_key);
-//        ////
-//       $result = $r53->createHostedZone('google.com', 'abclllllldef', 'no cooment here');
-//       var_dump($result);
     }
 
 }
